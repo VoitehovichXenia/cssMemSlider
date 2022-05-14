@@ -3,3 +3,83 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.slider {
+  width: 60vw;
+  height: 100vh;  
+  overflow: hidden;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.slides {
+  display: grid;
+  grid-template-rows: 85vh 5vh 10vh;
+  width: 100%;
+}
+
+.memes-container {
+  width: 400%;
+  margin: 0 auto;
+  grid-row: 1 / 2;
+  display: flex;
+}
+
+.meme {
+  width: 25%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: 0.7s;
+}
+
+.meme_1 {
+  background-image: url('../images/1.jpg');
+}
+
+.meme_2 {
+  background-image: url('../images/2.jpg');
+}
+
+.meme_3 {
+  background-image: url('../images/3.jpg');
+}
+
+.meme_4 {
+  background-image: url('../images/4.jpg');
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  grid-row: 2 / 3;
+  justify-content: center;
+}
+
+.circle {
+  display: block;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.descriptions-container {
+  width: 400%;
+  margin: 0 auto;
+  grid-row: 3 / 4;
+  display: flex;
+}
+
+.description {
+  width: 25%;
+  text-align: center;
+  transition: 0.7s;
+}
+
+input[name="controls"] {
+  display: none;
+}
