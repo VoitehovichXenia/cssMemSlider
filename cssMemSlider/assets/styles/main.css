@@ -83,3 +83,23 @@
 input[name="controls"] {
   display: none;
 }
+
+#meme_1:checked ~ .memes-container > .meme_1,
+#meme_1:checked ~ .descriptions-container > .description_1 {
+  margin-left: 0;
+}
+
+#meme_2:checked ~ .memes-container > .meme_1,
+#meme_2:checked ~ .descriptions-container > .description_1 {
+  margin-left: -25%;
+}
+
+#meme_3:checked ~ .memes-container > .meme_1,
+#meme_3:checked ~ .descriptions-container > .description_1 {
+  margin-left: -50%;
+}
+
+#meme_4:checked ~ .memes-container > .meme_1,
+#meme_4:checked ~ .descriptions-container > .description_1 {
+  margin-left: -75%;
+}
