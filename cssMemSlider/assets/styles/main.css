@@ -19,14 +19,14 @@
 }
 
 .memes-container {
-  width: 400%;
+  width: 500%;
   margin: 0 auto;
   grid-row: 1 / 2;
   display: flex;
 }
 
 .meme {
-  width: 25%;
+  width: 20%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -50,6 +50,10 @@
   background-image: url('../images/4.jpg');
 }
 
+.meme_5 {
+  background-image: url('../images/5.jpg');
+}
+
 .controls {
   display: flex;
   gap: 10px;
@@ -68,14 +72,14 @@
 }
 
 .descriptions-container {
-  width: 400%;
+  width: 500%;
   margin: 0 auto;
   grid-row: 3 / 4;
   display: flex;
 }
 
 .description {
-  width: 25%;
+  width: 20%;
   text-align: center;
   transition: 0.7s;
 }
@@ -91,15 +95,20 @@ input[name="controls"] {
 
 #meme_2:checked ~ .memes-container > .meme_1,
 #meme_2:checked ~ .descriptions-container > .description_1 {
-  margin-left: -25%;
+  margin-left: -20%;
 }
 
 #meme_3:checked ~ .memes-container > .meme_1,
 #meme_3:checked ~ .descriptions-container > .description_1 {
-  margin-left: -50%;
+  margin-left: -40%;
 }
 
 #meme_4:checked ~ .memes-container > .meme_1,
 #meme_4:checked ~ .descriptions-container > .description_1 {
-  margin-left: -75%;
+  margin-left: -60%;
+}
+
+#meme_5:checked ~ .memes-container > .meme_1,
+#meme_5:checked ~ .descriptions-container > .description_1 {
+  margin-left: -80%;
 }
