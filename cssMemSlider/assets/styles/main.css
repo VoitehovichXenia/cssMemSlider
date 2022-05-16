@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --body-background: #8E9AAF;
+  --slider-background: rgb(236, 236, 236);
+  --control-checked: #243c66;
+  --control-active: #7296d3;
+  --control-hover: #5f708d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  padding: 0.7rem 0;
+  background-color: var(--body-background);
+}
+
+.slider {
+  width: 60vw;
+  height: calc(100vh - 1.4rem);  
+  overflow: hidden;
+  /* padding: 1rem 1rem 0; */
+  border-radius: 0.7rem;
+  margin: 0 auto;
+  background-color: var(--slider-background);
+}
+
+.slides {
+  display: grid;
+  grid-template-rows: 80vh 10vh;
+  grid-template-columns: calc(45vw - 2rem) 15vw;
+  gap: 5vh 0;
+  width: 100%;
+}
+
+.memes-container {
+  width: calc(60vw * 5);
+  margin: 0 auto;
+  padding-top: 1rem;
+  grid-row: 1 / 2;
+  grid-column-start: span 2;
+  display: flex;
+}
+
+.meme {
+  width: 20%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: 0.7s;
+}
+
+.meme_1 {
+  background-image: url('../images/1.jpg');
+}
+
+.meme_2 {
+  background-image: url('../images/2.jpg');
+}
+
+.meme_3 {
+  background-image: url('../images/3.jpg');
+}
+
+.meme_4 {
+  background-image: url('../images/4.jpg');
+}
+
+.meme_5 {
+  background-image: url('../images/5.jpg');
+}
+
+.controls { 
+  z-index: 20;
+  display: flex;
+  gap: 0.7rem;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  justify-content: center;
+  padding-right: 1rem;
+  background-color: var(--slider-background);
+}
+
+.control {
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.control__circle{
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.2rem solid var(--control-hover);
+  border-radius: 1.3rem;
+}
+
+.control:hover .control__circle  {
+  background-color: var(--control-hover);
+}
+
+.control:active .control__circle{
+  background-color: var(--control-active);
+  border-color: var(--control-active);
+}
+
+#meme_1:checked ~ .controls label[for="meme_1"] .control__circle,
+#meme_2:checked ~ .controls label[for="meme_2"] .control__circle,
+#meme_3:checked ~ .controls label[for="meme_3"] .control__circle,
+#meme_4:checked ~ .controls label[for="meme_4"] .control__circle,
+#meme_5:checked ~ .controls label[for="meme_5"] .control__circle {
+  background-color: var(--control-checked);
+  border-color: var(--control-checked);
+}
+
+.descriptions-container {
+  width: calc(60vw * 5);
+  margin: 0 auto;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  display: flex;
+  overflow: hidden;
+}
+
+.description {
+  width: 20%;
+  padding-left: 1.3rem;
+  transition: 0.7s;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+}
+
+.description__text {
+  display: block;
+  max-width: calc(60vw - 25vw);
+}
+
+input[name="controls"] {
+  display: none;
+}
+
+#meme_1:checked ~ .memes-container > .meme_1,
+#meme_1:checked ~ .descriptions-container > .description_1 {
+  margin-left: 0;
+}
+
+#meme_2:checked ~ .memes-container > .meme_1,
+#meme_2:checked ~ .descriptions-container > .description_1 {
+  margin-left: -20%;
+}
+
+#meme_3:checked ~ .memes-container > .meme_1,
+#meme_3:checked ~ .descriptions-container > .description_1 {
+  margin-left: -40%;
+}
+
+#meme_4:checked ~ .memes-container > .meme_1,
+#meme_4:checked ~ .descriptions-container > .description_1 {
+  margin-left: -60%;
+}
+
+#meme_5:checked ~ .memes-container > .meme_1,
+#meme_5:checked ~ .descriptions-container > .description_1 {
+  margin-left: -80%;
+}
+
+@media screen and (max-width: 767.98px) {
+  .slides {
+    display: grid;
+    grid-template-rows: 60vh 5vh 10vh;
+    grid-template-columns: 1fr;
+    gap: 5vh 0;
+  }
+  
+  .memes-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  
+  .controls { 
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    padding: 0;
+    width: 60vw;
+  }
+  
+  .descriptions-container {
+    width: calc(60vw * 5);
+    margin: 0 auto;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+  
+  .description {
+    width: 20%;
+    padding-left: 1.3rem;
+    transition: 0.7s;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .description__text {
+    display: block;
+    max-width: 55vw;
+  }
+  
+}
