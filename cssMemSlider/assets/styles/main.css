@@ -80,7 +80,6 @@ body {
 }
 
 .controls { 
-  position: relative;
   z-index: 20;
   display: flex;
   gap: 0.7rem;
