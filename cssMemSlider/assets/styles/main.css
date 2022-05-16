@@ -175,3 +175,45 @@ input[name="controls"] {
 #meme_5:checked ~ .descriptions-container > .description_1 {
   margin-left: -80%;
 }
+
+@media screen and (max-width: 767.98px) {
+  .slides {
+    display: grid;
+    grid-template-rows: 60vh 5vh 10vh;
+    grid-template-columns: 1fr;
+    gap: 5vh 0;
+  }
+  
+  .memes-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  
+  .controls { 
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    padding: 0;
+    width: 60vw;
+  }
+  
+  .descriptions-container {
+    width: calc(60vw * 5);
+    margin: 0 auto;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+  
+  .description {
+    width: 20%;
+    padding-left: 1.3rem;
+    transition: 0.7s;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .description__text {
+    display: block;
+    max-width: 55vw;
+  }
+  
+}
